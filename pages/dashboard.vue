@@ -1,7 +1,6 @@
 <script setup>
 definePageMeta({
-  middleware: ['auth'],
-  requiresAuth: true
+  middleware: ['protected']
 })
 
 const authStore = useAuthStore()

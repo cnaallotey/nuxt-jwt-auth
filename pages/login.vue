@@ -1,7 +1,6 @@
 <script setup>
 definePageMeta({
-  middleware: ['auth'],
-  guest: true
+  middleware: ['guest']
 })
 </script>
 <template>

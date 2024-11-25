@@ -4,12 +4,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     await authStore.checkAuth()
     
     // If user is not authenticated and trying to access a protected route
-    if (!authStore.user && to.meta.requiresAuth) {
+    if (!authStore.user) {
       return navigateTo('/login')
-    }
-    
-    // If user is authenticated and trying to access auth pages (login/register)
-    if (authStore.user && to.meta.guest) {
-      return navigateTo('/')
     }
   })
